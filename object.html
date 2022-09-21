@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Primitive and Non-primitive</title>
+
+</head>
+
+
+<body>
+    <h1 id="heading"> Hi</h1>
+
+    <script>
+        // let a = 5;
+        // console.log(a);
+        let b = new Number(5);
+        console.log(b.valueOf());
+        let c = new String('accio');
+        console.log(c.valueOf());
+        let d = new Boolean(true);
+        console.log(d.valueOf());
+        const obj1 = {
+            a: 5,
+            b: 2
+        }
+        //      JSON -- Java Script Object Notation
+        // JSON.stringify(obj1)--converts object to string
+        // JSON.parse--to convert string to obj..
+        document.getElementById('heading').innerText = JSON.stringify(obj1)
+        document.getElementById('heading').innerText = obj1
+        console.log(JSON.stringify(obj1));
+        console.log(JSON.parse(`{ "a": 5, "b": 2 }`))
+        const fruits = ['apple', 'orange', 'mango'];
+        document.getElementById('heading').innerHTML = fruits;
+        fruits.shift();
+        console.log(fruits);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Object Method</title>
+    <script>
+
+        // this is standard function
+        // abc(); hoisting
+        // function abc() {
+        //     console.log('abc')
+        // }
+        // abc();
+
+        // anonymous function --function without function name
+        //  let abc = function(){
+        //     console.log('abc')
+        // }
+        //  self invoking function -- function which get invoked at the time declaration
+        // (function abc(){
+        //     console.log('abc')
+        // }) ()
+        //  properties of object -- those keys which hold value other than function exampl - firstName, lastName
+        // method --used in anonymous function..those keys which hold function value example say hi
+        // let sarfraz = {
+        //     firstName: 'Sarfraz',
+        //     lastName: 'siddiqi',
+        //     sayHi: function () {
+        //         console.log('hi')
+        //     }
+        // }
+        // // console.log(sarfraz.lastName);
+        // // sarfraz.sayHi()
+        // console.log(console.log('hi'))
+        // this keyword -- owner of that method
+        // let studentDetails = {
+        //     firstName: 'sarfraz',
+        //     lastName: 'siddiqi',
+        //     hobbies: ['swiming', 'cycling', 'jogging'],
+        //     age: function (yearOfBirth) {
+        //         //console.log(`age is ${2022 - yearOfBirth}`)
+        //         // console.log(this.firstName + ' ' + this.lastName)
+        //     }
+        //     introduction: function () {
+        //         console.log('My name is ' + this.firstName + ' ' + this.lastName + '\n' +
+        //             'My hobies are ' + this.hobbies.join(',') + '.')
+        //         console.log(`My name is ${this.firstName} ${this.lastName}
+        //                   My hobies are ${this.hobbies.join(',')}`)
+        //     }
+
+        // }
+        // studentDetails.age(1995)
+        // studentDetails.introduction()
+
+        //      object constructor -- Template or Blue prints for objects
+
+        function Student() {
+            this.country = 'India'
+        }
+        let sarfraz = new Student();
+        console.log(sarfraz)
+
+        // function Student(firstName, lastName) {
+        //     this.firstName = firstName
+        //     this.lastName = lastName
+        //     this.displayFullname = function () {
+        //         console.log(this.firstName + ' ' + this.lastName)
+        //     }
+        // }
+        // let sarfz = new Student('sarfraz', 'siddiqi')
+        // let avil = new Student('Avil', 'Mendonca')
+        // console.log(sarfz)
+        // console.log(avil)
+        // sarfz.displayFullname()
+        // console.log
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

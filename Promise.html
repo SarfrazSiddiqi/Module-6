@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises</title>
+</head>
+<div id="root"></div>
+<body>
+    <script>
+        // What are promises?
+        // Promises are code which say => I promise a Result after some time
+
+        // 'Producing Code' is a code that can take some time
+        // 'Consuming Code' is a code that must wait for the result
+
+
+        //syntax
+        // let basicPromise = new Promise(function(resolve, reject){
+            //Producing code which may take some time
+
+            // only one of resolve or reject should be called
+            // resolve()
+            // reject()
+
+            // how to know whether to resolve or reject - based on your producing code
+        // });
+
+        //Consuming code => Must wait for a fulfilled Promise
+        // basicPromise.then(function(value){
+        //     console.log("Work done successfully with output",value)
+        // },function(error){
+        //     console.log("Some error occurred",error)
+        // })
+
+         // States of promises     ||  Result of promises
+        // pending                          undefined  
+        // fulfilled                        a result value
+        // rejected                         an error object
+
+
+        // function display(data){
+        //     document.getElementById("root").innerHTML = data;
+        // }
+
+        // let promiseTemp = new Promise((myResolve,myReject)=>{
+
+        //     let x = 1;
+
+        //     // producing code - which takes some time
+
+        //     if(x===0){
+        //         setTimeout(()=>myResolve("All good"),4000)
+
+        //     }else{
+
+        //         setTimeout(()=>myReject("Arrg! Something went wrong!"),1000)
+        //     }
+        // })
+
+        // promiseTemp.then(function(value){
+        //     display(value)
+        // },
+        // function(error){
+        //     display(error)
+        // })
+
+        // promiseTemp.then(function(value){
+        //     display(value)
+        // }).catch(function(error){
+        //     display(error)
+        // })
+
+        // promiseTemp.then(value => {
+        //     display(value)
+        // }).catch(error => {
+        //     display(error)
+        // })
+
+        //real life example
+        // login to fb using abc@fake.com 123456 
+
+        // let p = new Promise((resolve,reject)=>{
+        //     setTimeout(()=>{
+        //         resolve(10)
+        //     },3000)
+        // })
+
+        // p.then(result=>{
+        //     console.log(result)
+        //     return result*2
+        //     return new Promise((resolve,reject)=>{
+        //         setTimeout(()=>{resolve(result*2)},3000)
+        //     })
+        // }).then(result=>{
+        //     console.log(result)
+        //     return result*3
+        //     return new Promise((resolve,reject)=>{
+        //         setTimeout(()=>{resolve(result*3)},3000)
+        //     })
+        // }).then(result=>{
+        //     console.log(result)
+        //     return result*4
+        // })
+        //     return new Promise((resolve,reject)=>{
+        //         setTimeout(()=>{resolve(result*4)},3000)
+        //     }).then(result=>
+        //     console.log(result)
+        // )
+
+        // function temp(x){
+        //     console.log(x)
+        //     return x*2;
+        // }
+        // temp(2);
+
+        // const getUser = (userId) => {
+        //     //get a user using the user Id
+
+        //     return new Promise((resolve,reject)=>{
+        //         console.log("Get the user from the database")
+
+        //         setTimeout(()=>{
+        //             resolve({
+        //                 id:userId,
+        //                 username: 'rohan'
+        //             })
+        //         },2*1000);
+        //     })
+        // }
+
+        // const getServices = (user) => {
+        //     //return some services
+        //     return new Promise((resolve,reject)=>{
+        //         console.log(`Get the services of ${user.username} from the API`)
+
+        //         setTimeout(()=>{
+        //             resolve(['Email','VPN','CDN'])
+        //         },3*1000)
+
+        //     })
+        // }
+
+        // const servicesCost = (services) => {
+        //     // return the cost of these services
+
+        //     return new Promise((resolve,reject)=>{
+        //         console.log(`Calculate the total service cost of ${services.join(',')}`)
+
+        //         setTimeout(()=>{
+        //             resolve(services.length*100)
+        //         },4*1000)
+        //     })
+        // }
+
+        //   getUser(100)
+        //     .then(user=>console.log(user))
+
+        // getUser(100)
+        //     .then(getServices)
+        //     .then(console.log)
+
+
+        // getUser(100)
+        //     .then(user=> {
+        //         getServices(user).then(services=>{
+        //             console.log(services)
+        //         })
+        //     })
+
+        // getUser(100)
+        //     .then(getServices)
+        //     .then(servicesCost)
+        //     .then(console.log)
+
+
+
+    </script>
+</body>
+</html>
